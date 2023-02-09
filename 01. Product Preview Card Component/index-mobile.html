@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						colors: {
+							primaryDarkCyan: "hsl(158, 36%, 37%)",
+							primaryCream: "hsl(30, 38%, 92%)",
+							neutralVeryDarkBlue: "hsl(212, 21%, 14%)",
+							neutralDarkGrayishBlue: "hsl(228, 12%, 48%)",
+						},
+						letterSpacing: {
+							custom: ".5rem",
+						},
+					},
+				},
+			};
+		</script>
+		<title>Frontend Mentor | Product preview card component</title>
+
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&display=swap");
+
+			@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+			.attribution {
+				font-size: 11px;
+				text-align: center;
+			}
+			.attribution a {
+				color: hsl(228, 45%, 44%);
+			}
+
+			.font-Fraunces {
+				/* outline: 1px solid black; */
+				font-family: "Fraunces", sans-serif;
+				font-weight: 800;
+			}
+
+			.font-Montserrat {
+				font-family: "Montserrat", sans-serif;
+			}
+		</style>
+	</head>
+	<body class="w-screen h-screen flex justify-center items-center bg-primaryCream p-4">
+		<div class="bg-white rounded-lg max-h-full flex flex-col gap-6">
+			<div class="h-1/3">
+				<img src="./images/image-product-mobile.jpg" alt="" class="rounded-t-lg" />
+			</div>
+			<div class="flex flex-col p-6 gap-4">
+				<div class="uppercase text-neutralDarkGrayishBlue font-Montserrat tracking-custom">
+					Perfume
+				</div>
+				<div class="text-4xl font-Fraunces">Gabrielle Essence Eau De Parfum</div>
+				<div class="text-neutralDarkGrayishBlue font-Monserrat tracking-wider">
+					A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator
+					for the House of CHANEL.
+				</div>
+				<div class="flex items-center gap-4">
+					<span class="text-4xl text-primaryDarkCyan font-Fraunces">$149.99</span>
+					<span class="line-through text-neutralDarkGrayishBlue font-Montserrat">$169.99</span>
+				</div>
+				<button
+					class="w-full mt-4 bg-primaryDarkCyan p-4 rounded-lg text-white font-bold font-Monserrat hover:bg-neutralVeryDarkBlue"
+				>
+					Add to Cart
+				</button>
+			</div>
+		</div>
+	</body>
+	<!-- <div class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</html>
