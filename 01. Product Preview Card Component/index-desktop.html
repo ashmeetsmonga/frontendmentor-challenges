@@ -46,28 +46,32 @@
 				font-weight: 800;
 			}
 
-			.font-Montserrat {
+			.font-Monserrat {
 				font-family: "Montserrat", sans-serif;
 			}
 		</style>
 	</head>
-	<body class="w-screen h-screen flex justify-center items-center bg-primaryCream p-4">
-		<div class="bg-white rounded-lg max-h-full flex flex-col gap-6">
-			<div class="h-1/3">
-				<img src="./images/image-product-mobile.jpg" alt="" class="rounded-t-lg" />
+	<body class="w-screen h-screen flex justify-center items-center bg-primaryCream">
+		<div class="w-1/2 flex rounded-lg bg-white">
+			<div class="w-full">
+				<img
+					src="./images/image-product-desktop.jpg"
+					class="rounded-l-lg object-cover h-full"
+					alt="Perfume"
+				/>
 			</div>
-			<div class="flex flex-col p-6 gap-4">
-				<div class="uppercase text-neutralDarkGrayishBlue font-Montserrat tracking-custom">
+			<div class="w-full flex flex-col gap-4 p-10">
+				<div class="uppercase text-neutralDarkGrayishBlue font-Monserrat tracking-custom">
 					Perfume
 				</div>
-				<div class="text-4xl font-Fraunces">Gabrielle Essence Eau De Parfum</div>
-				<div class="text-neutralDarkGrayishBlue font-Monserrat tracking-wider">
+				<div class="w-4/5 text-4xl font-Fraunces">Gabrielle Essence Eau De Parfum</div>
+				<div class="mt-4 text-neutralDarkGrayishBlue font-Monserrat">
 					A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator
 					for the House of CHANEL.
 				</div>
-				<div class="flex items-center gap-4">
-					<span class="text-4xl text-primaryDarkCyan font-Fraunces">$149.99</span>
-					<span class="line-through text-neutralDarkGrayishBlue font-Montserrat">$169.99</span>
+				<div class="mt-4 flex items-center gap-6">
+					<span class="text-primaryDarkCyan text-4xl font-Fraunces">$149.99</span>
+					<span class="text-neutralDarkGrayishBlue line-through font-Monserrat">$169.99</span>
 				</div>
 				<button
 					class="w-full mt-4 bg-primaryDarkCyan p-4 rounded-lg text-white font-bold font-Monserrat hover:bg-neutralVeryDarkBlue"

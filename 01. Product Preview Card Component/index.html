@@ -46,32 +46,33 @@
 				font-weight: 800;
 			}
 
-			.font-Monserrat {
+			.font-Montserrat {
 				font-family: "Montserrat", sans-serif;
 			}
 		</style>
 	</head>
-	<body class="w-screen h-screen flex justify-center items-center bg-primaryCream">
-		<div class="w-1/2 flex rounded-lg bg-white">
-			<div class="w-full">
+	<body class="w-screen h-screen flex justify-center items-center bg-primaryCream p-4">
+		<div class="bg-white rounded-lg max-h-full flex flex-col gap-6 sm:flex-row sm:w-1/2">
+			<div class="sm:w-full">
+				<img src="./images/image-product-mobile.jpg" alt="Perfume" class="sm:hidden rounded-t-lg" />
 				<img
 					src="./images/image-product-desktop.jpg"
-					class="rounded-l-lg object-cover h-full"
 					alt="Perfume"
+					class="hidden rounded-l-lg h-full w-full object-cover sm:block"
 				/>
 			</div>
-			<div class="w-full flex flex-col gap-4 p-10">
-				<div class="uppercase text-neutralDarkGrayishBlue font-Monserrat tracking-custom">
+			<div class="flex flex-col p-6 gap-4 sm:w-full sm:justify-center">
+				<div class="uppercase text-neutralDarkGrayishBlue font-Montserrat tracking-custom">
 					Perfume
 				</div>
-				<div class="w-4/5 text-4xl font-Fraunces">Gabrielle Essence Eau De Parfum</div>
-				<div class="mt-4 text-neutralDarkGrayishBlue font-Monserrat">
+				<div class="text-4xl font-Fraunces sm:mt-2">Gabrielle Essence Eau De Parfum</div>
+				<div class="text-neutralDarkGrayishBlue font-Monserrat tracking-wider sm:mt-4">
 					A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator
 					for the House of CHANEL.
 				</div>
-				<div class="mt-4 flex items-center gap-6">
-					<span class="text-primaryDarkCyan text-4xl font-Fraunces">$149.99</span>
-					<span class="text-neutralDarkGrayishBlue line-through font-Monserrat">$169.99</span>
+				<div class="flex items-center gap-4 sm:my-2">
+					<span class="text-4xl text-primaryDarkCyan font-Fraunces">$149.99</span>
+					<span class="line-through text-neutralDarkGrayishBlue font-Montserrat">$169.99</span>
 				</div>
 				<button
 					class="w-full mt-4 bg-primaryDarkCyan p-4 rounded-lg text-white font-bold font-Monserrat hover:bg-neutralVeryDarkBlue"
