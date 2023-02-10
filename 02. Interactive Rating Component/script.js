@@ -27,7 +27,9 @@ function selectRating() {
 ratings.forEach((rating) => rating.addEventListener("click", selectRating));
 
 function submitRating() {
+	if (!rating) return;
 	finalRating.innerText = rating;
+
 	ratingContainer.classList.toggle("hidden");
 	submitContainer.classList.toggle("hidden");
 }
