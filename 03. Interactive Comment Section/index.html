@@ -37,6 +37,7 @@
 
 			* {
 				font-family: "Rubik", sans-serif;
+				/* outline: 1px solid black; */
 			}
 
 			.font-500 {
@@ -48,9 +49,57 @@
 			}
 		</style>
 	</head>
-	<body class="w-screen h-screen p-4 flex justify-center bg-veryLightGray">
+	<body class="w-screen p-4 flex justify-center bg-veryLightGray overflow-x-hidden">
 		<!-- Pull dynamic content from the data.json file -->
-		<div id="comments-container" class="mt-6 w-full sm:w-1/2"></div>
+		<div id="comments-container" class="mt-6 w-full sm:w-1/2">
+			<!-- <div class="flex gap-4 my-2 sm:gap-8">
+				<div class="bg-lightGray self-stretch items-stretch w-1"></div>
+				<div id="comment" class="w-full bg-white rounded-2xl p-4 flex gap-6 sm:p-6">
+					<div class="hidden sm:block">
+						<div
+							class="bg-lightGray px-4 py-2 rounded-xl flex flex-col items-center justify-around gap-1"
+						>
+							<span class="text-lightGrayishBlue font-700 text-xl">+</span
+							><span class="text-moderateBlue font-700">12</span
+							><span class="text-lightGrayishBlue font-700 text-xl">-</span>
+						</div>
+					</div>
+					<div>
+						<div class="w-full flex items-center gap-4">
+							<img
+								class="w-10 h-10"
+								src="./images/avatars/image-amyrobson.png"
+								alt="profile-photo"
+							/>
+							<div class="font-700 text-darkBlue">amyrobson</div>
+							<div class="text-grayishBlue">1 month ago</div>
+							<div class="hidden ml-auto sm:block">
+								<div class="flex items-center gap-2">
+									<img class="w-4 h-4" src="./images/icon-reply.svg" alt="" />
+									<span class="text-moderateBlue font-700">Reply</span>
+								</div>
+							</div>
+						</div>
+						<div class="mt-4 text-grayishBlue">
+							Impressive! Though it seems the drag feature could be improved. But overall it looks
+							incredible. You've nailed the design and the responsiveness at various breakpoints
+							works really well.
+						</div>
+						<div class="flex justify-between items-center mt-4 sm:hidden">
+							<div class="bg-lightGray px-4 py-2 rounded-xl flex gap-4">
+								<span class="text-lightGrayishBlue font-700">+</span
+								><span class="text-moderateBlue font-700">12</span
+								><span class="text-lightGrayishBlue font-700">-</span>
+							</div>
+							<div class="flex items-center gap-2">
+								<img class="w-4 h-4" src="./images/icon-reply.svg" alt="" />
+								<span class="text-moderateBlue font-700">Reply</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		</div>
 		<script type="module" src="script.js"></script>
 	</body>
 </html>
