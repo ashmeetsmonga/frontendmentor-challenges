@@ -2,23 +2,13 @@ const commentsContainer = document.getElementById("comments-container");
 
 const populateComments = (data) => {
 	const { comments } = data;
-	console.log(comments);
 	comments.forEach((comment) => {
 		const commentEl = getCommentUI(comment);
-		const commentChildren = document.createElement("div");
-		commentChildren.classList.add("flex", "gap-6", "pl-4");
-		commentChildren.innerHTML = `<div class="bg-lightGray my-2 self-stretch items-stretch w-2"></div><div id='comment-children-container-${comment.id}'></div>`;
 		commentsContainer.appendChild(commentEl);
+		if (!comment.replies.length) return;
+		const commentChildren = document.createElement("div");
 		commentsContainer.appendChild(commentChildren);
-		comment?.replies.forEach((reply) => {
-			let commentChildContainer = document.getElementById(
-				`comment-children-container-${comment.id}`
-			);
-			const commentChildEl = getCommentUI(reply);
-			console.log(commentChildEl);
-			commentChildContainer.appendChild(commentChildEl);
-		});
-		console.log(commentChildren);
+		getCommentChildren(commentChildren, comment);
 	});
 };
 
@@ -29,10 +19,22 @@ const getComments = async () => {
 };
 getComments();
 
-function getCommentUI(comment) {
+function getCommentChildren(commentChildren, comment) {
+	commentChildren.classList.add("flex", "gap-6", "pl-4");
+	commentChildren.innerHTML = `<div class="bg-lightGray my-2 self-stretch items-stretch w-2"></div><div id='comment-children-container-${comment.id}'></div>`;
+	comment.replies.forEach((reply) => {
+		let commentChildContainer = document.getElementById(`comment-children-container-${comment.id}`);
+		const commentChildEl = getCommentUI(reply, true);
+		commentChildContainer.appendChild(commentChildEl);
+	});
+}
+
+function getCommentUI(comment, isChild = false) {
 	const commentEl = document.createElement("div");
 	commentEl.innerHTML = `
-        <div class="w-full bg-white my-2 rounded-2xl p-4 flex gap-6 sm:p-6">
+        <div class="w-full bg-white my-2 ${
+					!isChild && comment.replies.length === 0 ? "mb-4" : ""
+				} rounded-2xl p-4 flex gap-6 sm:p-6">
         <div class="hidden sm:block">
             <div
                 class="bg-lightGray px-4 py-2 rounded-xl flex flex-col items-center justify-around gap-1"
