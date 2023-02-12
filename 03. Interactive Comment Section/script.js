@@ -1,5 +1,5 @@
 const commentsContainer = document.getElementById("comments-container");
-
+let currentUser;
 const populateComments = (comments) => {
 	comments.forEach((comment) => {
 		const commentEl = getCommentUI(comment);
@@ -20,6 +20,8 @@ const populateUserDetails = (user) => {
 const getComments = async () => {
 	const res = await fetch("./data.json");
 	const data = await res.json();
+	currentUser = data.currentUser;
+	console.log(currentUser);
 	populateComments(data.comments);
 	populateUserDetails(data.currentUser);
 };
@@ -36,8 +38,8 @@ function getCommentChildren(commentChildren, comment) {
 }
 
 function getCommentUI(comment, isChild = false) {
-	if (isChild) console.log(comment);
 	const commentEl = document.createElement("div");
+	const curUser = comment.user.username === currentUser.username;
 	commentEl.innerHTML = `
         <div class="w-full bg-white my-2 ${
 					!isChild && comment.replies.length === 0 ? "mb-4" : ""
@@ -54,7 +56,9 @@ function getCommentUI(comment, isChild = false) {
         <div>
             <div class="w-full flex items-center gap-4">
                 <img class="w-10 h-10" src="${comment.user.image.png}" alt="profile-photo" />
-                <div class="font-700 text-darkBlue">${comment.user.username}</div>
+                <div class="font-700 text-darkBlue">${comment.user.username} </div>${
+		curUser ? "<div class='bg-moderateBlue text-white py-0.5 px-2 rounded-md'>you</div>" : ""
+	}
                 <div class="text-grayishBlue">${comment.createdAt}</div>
                 <div class="hidden ml-auto sm:block">
                     <div class="flex items-center gap-2">
