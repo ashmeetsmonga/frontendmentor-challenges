@@ -61,10 +61,23 @@ function getCommentUI(comment, isChild = false) {
 	}
                 <div class="text-grayishBlue">${comment.createdAt}</div>
                 <div class="hidden ml-auto sm:block">
-                    <div class="flex items-center gap-2">
-                        <img class="w-4 h-4" src="./images/icon-reply.svg" alt="" />
-                        <span class="text-moderateBlue font-700">Reply</span>
-                    </div>
+
+                    ${
+											curUser
+												? `<div class="flex items-center gap-4">
+                                        <div class='flex gap-2 items-center'>
+                                        <img class="w-4 h-4" src="./images/icon-delete.svg" alt="" />
+                <span class="text-softRed font-700">Delete</span>
+                </div>
+                <div class='flex gap-2 items-center'>
+                <img class="w-4 h-4" src="./images/icon-edit.svg" alt="" />
+                <span class="text-moderateBlue font-700">Edit</span>
+            </div></div>`
+												: `<div class="flex items-center gap-2">
+                    <img class="w-4 h-4" src="./images/icon-reply.svg" alt="" />
+                    <span class="text-moderateBlue font-700">Reply</span>
+                </div>`
+										}
                 </div>
             </div>
             <div class="mt-4 text-grayishBlue">
@@ -80,10 +93,22 @@ function getCommentUI(comment, isChild = false) {
                     ><span class="text-moderateBlue font-700">${comment.score}</span
                     ><span class="text-lightGrayishBlue font-700">-</span>
                 </div>
-                <div class="flex items-center gap-2">
+                ${
+									curUser
+										? `<div class="flex items-center gap-4">
+                                        <div class='flex gap-2 items-center'>
+                                        <img class="w-4 h-4" src="./images/icon-delete.svg" alt="" />
+                <span class="text-softRed font-700">Delete</span>
+                </div>
+                <div class='flex gap-2 items-center'>
+                <img class="w-4 h-4" src="./images/icon-edit.svg" alt="" />
+                <span class="text-moderateBlue font-700">Edit</span>
+            </div></div>`
+										: `<div class="flex items-center gap-2">
                     <img class="w-4 h-4" src="./images/icon-reply.svg" alt="" />
                     <span class="text-moderateBlue font-700">Reply</span>
-                </div>
+                </div>`
+								}
             </div>
         </div>
     </div>
