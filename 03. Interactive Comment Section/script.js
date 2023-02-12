@@ -30,6 +30,7 @@ function getCommentChildren(commentChildren, comment) {
 }
 
 function getCommentUI(comment, isChild = false) {
+	if (isChild) console.log(comment);
 	const commentEl = document.createElement("div");
 	commentEl.innerHTML = `
         <div class="w-full bg-white my-2 ${
@@ -57,7 +58,11 @@ function getCommentUI(comment, isChild = false) {
                 </div>
             </div>
             <div class="mt-4 text-grayishBlue">
-            ${comment.content}
+            ${
+							isChild
+								? `<span class='font-bold text-moderateBlue'>@${comment.replyingTo}</span> ${comment.content}`
+								: `${comment.content}`
+						} 
             </div>
             <div class="flex justify-between items-center mt-4 sm:hidden">
                 <div class="bg-lightGray px-4 py-2 rounded-xl flex gap-4">
