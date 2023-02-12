@@ -49,7 +49,7 @@
 			}
 		</style>
 	</head>
-	<body class="w-screen p-4 flex justify-center bg-veryLightGray overflow-x-hidden">
+	<body class="w-screen p-4 flex items-center flex-col bg-veryLightGray overflow-x-hidden">
 		<!-- Pull dynamic content from the data.json file -->
 		<div id="comments-container" class="mt-6 w-full sm:w-1/2">
 			<!-- <div class="flex gap-4 my-2 sm:gap-8">
@@ -99,6 +99,31 @@
 					</div>
 				</div>
 			</div> -->
+		</div>
+		<div
+			class="mt-6 w-full sm:w-1/2 w-full bg-white rounded-2xl flex flex-col items-center py-4 px-8 sm:flex-row sm:items-start sm:gap-4"
+		>
+			<img
+				class="hidden w-10 h-10 sm:block"
+				src="./images/avatars/image-amyrobson.png"
+				alt="profile-photo"
+			/>
+			<textarea
+				type="text"
+				class="w-full h-20 border rounded-xl p-4 sm:h-[8rem]"
+				placeholder="Add a comment..."
+			></textarea>
+			<button
+				class="hidden bg-moderateBlue uppercase tracking-wider px-8 py-2 text-white rounded-xl sm:block"
+			>
+				Send
+			</button>
+			<div class="mt-4 w-full flex justify-between sm:hidden">
+				<img class="w-10 h-10" src="./images/avatars/image-amyrobson.png" alt="profile-photo" />
+				<button class="bg-moderateBlue uppercase tracking-wider px-8 py-2 text-white rounded-xl">
+					Send
+				</button>
+			</div>
 		</div>
 		<script type="module" src="script.js"></script>
 	</body>
