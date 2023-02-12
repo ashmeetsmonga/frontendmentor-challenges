@@ -1,7 +1,6 @@
 const commentsContainer = document.getElementById("comments-container");
 
-const populateComments = (data) => {
-	const { comments } = data;
+const populateComments = (comments) => {
 	comments.forEach((comment) => {
 		const commentEl = getCommentUI(comment);
 		commentsContainer.appendChild(commentEl);
@@ -12,10 +11,17 @@ const populateComments = (data) => {
 	});
 };
 
+const populateUserDetails = (user) => {
+	console.log(user.image.png);
+	document.getElementById("user-img-mobile").src = user.image.png;
+	document.getElementById("user-img-desktop").src = user.image.png;
+};
+
 const getComments = async () => {
-	const data = await fetch("./data.json");
-	const comments = await data.json();
-	populateComments(comments);
+	const res = await fetch("./data.json");
+	const data = await res.json();
+	populateComments(data.comments);
+	populateUserDetails(data.currentUser);
 };
 getComments();
 
