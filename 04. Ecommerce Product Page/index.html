@@ -34,7 +34,63 @@
 			}
 		</style>
 	</head>
-	<body class="w-screen h-screen flex items-center flex-col">
+	<body class="w-screen h-screen flex items-center flex-col relative">
+		<!-- Modal -->
+		<div id="modal" class="absolute top-0 w-screen h-screen flex justify-center items-center z-10">
+			<div class="absolute top-0 w-full h-full bg-black opacity-80"></div>
+			<div class="w-3/5 flex flex-col gap-8 justify-center items-center p-8 z-10">
+				<button id="modal-close" class="ml-auto text-orange text-3xl font-bold">X</button>
+				<div class="w-3/5 h-3/5 flex items-center relative">
+					<div
+						class="absolute top-50 -left-10 bg-white py-2 pb-4 px-6 -mr-9 rounded-full font-bold text-5xl z-20"
+					>
+						<
+					</div>
+					<img
+						id="main-image"
+						class="w-full h-full rounded-3xl"
+						src="./images/image-product-1.jpg"
+						alt=""
+					/>
+					<div
+						class="absolute top-50 left-[30rem] bg-white py-2 pb-4 px-6 -ml-9 rounded-full font-bold text-5xl z-20"
+					>
+						>
+					</div>
+				</div>
+				<div class="flex gap-8">
+					<div class="cursor-pointer outline outline-2 outline-orange rounded-lg bg-white">
+						<img
+							class="thumbnail-image w-20 h-20 opacity-50 rounded-lg"
+							src="./images/image-product-1-thumbnail.jpg"
+							alt=""
+						/>
+					</div>
+					<div class="cursor-pointer rounded-lg bg-white">
+						<img
+							class="thumbnail-image w-20 h-20 rounded-lg"
+							src="./images/image-product-2-thumbnail.jpg"
+							alt=""
+						/>
+					</div>
+					<div class="cursor-pointer rounded-lg bg-white">
+						<img
+							class="thumbnail-image w-20 h-20 rounded-lg"
+							src="./images/image-product-3-thumbnail.jpg"
+							alt=""
+						/>
+					</div>
+					<div class="cursor-pointer rounded-lg bg-white">
+						<img
+							class="thumbnail-image w-20 h-20 rounded-lg"
+							src="./images/image-product-4-thumbnail.jpg"
+							alt=""
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- Navigation Bar -->
 		<nav class="w-4/5 flex items-center justify-between h-full border-b-2 h-[8rem]">
 			<div class="flex items-center gap-8">
@@ -63,28 +119,28 @@
 					/>
 				</div>
 				<div class="flex gap-8">
-					<div class="outline outline-2 outline-orange rounded-lg">
+					<div class="cursor-pointer outline outline-2 outline-orange rounded-lg">
 						<img
 							class="thumbnail-image w-20 h-20 opacity-50 rounded-lg"
 							src="./images/image-product-1-thumbnail.jpg"
 							alt=""
 						/>
 					</div>
-					<div class="">
+					<div class="cursor-pointer">
 						<img
 							class="thumbnail-image w-20 h-20 rounded-lg"
 							src="./images/image-product-2-thumbnail.jpg"
 							alt=""
 						/>
 					</div>
-					<div class="">
+					<div class="cursor-pointer">
 						<img
 							class="thumbnail-image w-20 h-20 rounded-lg"
 							src="./images/image-product-3-thumbnail.jpg"
 							alt=""
 						/>
 					</div>
-					<div class="">
+					<div class="cursor-pointer">
 						<img
 							class="thumbnail-image w-20 h-20 rounded-lg"
 							src="./images/image-product-4-thumbnail.jpg"
