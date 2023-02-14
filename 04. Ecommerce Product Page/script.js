@@ -1,5 +1,20 @@
 const mainImage = document.getElementById("main-image");
+const mainImageModal = document.getElementById("main-image-modal");
 const thumbnailImages = document.querySelectorAll(".thumbnail-image");
+const modal = document.getElementById("modal");
+const modalCloseBtn = document.getElementById("modal-close-btn");
+
+let isModalOpen = false;
+
+function closeModal() {
+	isModalOpen = false;
+	modal.classList.add("hidden");
+}
+
+function openModal() {
+	isModalOpen = true;
+	modal.classList.remove("hidden");
+}
 
 function changeImage() {
 	thumbnailImages.forEach((image) => {
@@ -14,6 +29,10 @@ function changeImage() {
 
 	const mainImageSrc = this.src.replace("-thumbnail", "");
 	mainImage.src = mainImageSrc;
+	mainImageModal.src = mainImageSrc;
 }
 
 thumbnailImages.forEach((image) => image.addEventListener("click", changeImage));
+
+mainImage.addEventListener("click", openModal);
+modalCloseBtn.addEventListener("click", closeModal);
