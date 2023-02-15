@@ -36,10 +36,13 @@
 	</head>
 	<body class="w-screen h-screen flex items-center flex-col relative">
 		<!-- Modal -->
-		<div id="modal" class="absolute top-0 w-screen h-screen flex justify-center items-center z-10">
+		<div
+			id="modal"
+			class="hidden absolute top-0 w-screen h-screen flex justify-center items-center z-10"
+		>
 			<div class="absolute top-0 w-full h-full bg-black opacity-80"></div>
 			<div class="w-3/5 flex flex-col gap-8 justify-center items-center p-8 z-10">
-				<button id="modal-close-btn" class="ml-auto text-orange text-3xl font-bold">X</button>
+				<button id="modal-close-btn" class="ml-auto text-white text-3xl font-bold">X</button>
 				<div class="w-3/5 h-3/5 flex items-center relative">
 					<div
 						class="absolute top-50 -left-10 bg-white py-2 pb-4 px-6 -mr-9 rounded-full font-bold text-5xl z-20"
@@ -50,7 +53,7 @@
 						id="main-image-modal"
 						class="w-full h-full rounded-3xl"
 						src="./images/image-product-1.jpg"
-						alt=""
+						alt="main-image-modal"
 					/>
 					<div
 						class="absolute top-50 left-[30rem] bg-white py-2 pb-4 px-6 -ml-9 rounded-full font-bold text-5xl z-20"
@@ -113,7 +116,7 @@
 				<div class="w-[27rem] h-[27rem]">
 					<img
 						id="main-image"
-						class="w-full h-full rounded-3xl"
+						class="w-full h-full rounded-3xl cursor-pointer"
 						src="./images/image-product-1.jpg"
 						alt=""
 					/>
