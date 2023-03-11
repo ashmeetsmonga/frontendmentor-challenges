@@ -1,3 +1,22 @@
 .header {
-    outline: 2px solid black;
+    
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px;
+
+        &__menu {
+            > span {
+                display: block;
+                width: 26px;
+                height: 2px;
+                background-color: $darkBlue;
+
+                &:not(:last-child) {
+                    margin-bottom: 3px;
+                }
+            }
+        }
+    }
 }
