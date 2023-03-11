@@ -6,7 +6,16 @@
         align-items: center;
         padding: 24px;
 
+        &__logo {
+            img {
+                width: 8.8125rem;
+                height: 1.375rem;
+            }
+        }
+
         &__menu {
+            cursor: pointer;
+
             > span {
                 display: block;
                 width: 26px;
@@ -20,7 +29,20 @@
         }
 
         &__links {
-            font-size: $font-sm;
+            
+            a {
+                font-size: $font-sm;
+                transition: color .3s linear;
+
+                &:not(:last-child) {
+                    margin-right: 32px;
+                }
+
+                &:hover {
+                    color: $darkBlue;
+                    font-weight: 700;
+                }
+            }
         }
     }
 }
